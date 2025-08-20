@@ -1,0 +1,13 @@
+Vibrant:
+  - type: script
+    src: https://unpkg.com/node-vibrant@3.1.6/dist/vibrant.min.js
+
+PhotoSwipe:
+  - type: style
+    src: https://unpkg.com/photoswipe@4.1.3/dist/photoswipe.css
+  - type: style  
+    src: https://unpkg.com/photoswipe@4.1.3/dist/default-skin/default-skin.css
+  - type: script
+    src: https://unpkg.com/photoswipe@4.1.3/dist/photoswipe.min.js
+  - type: script
+    src: https://unpkg.com/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js
