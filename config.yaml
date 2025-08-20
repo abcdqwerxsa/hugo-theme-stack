@@ -1,3 +1,35 @@
+baseurl: https://example.com/
+languageCode: zh-cn
+theme: hugo-theme-stack
+title: 我的Hugo博客
+copyright: © 2025 我的博客
+
+# Theme i18n support
+DefaultContentLanguage: zh-cn
+
+# Set hasCJKLanguage to true if DefaultContentLanguage is in [zh-cn ja ko]
+hasCJKLanguage: true
+
+languages:
+    zh-cn:
+        languageName: 中文
+        title: 我的Hugo博客
+        weight: 1
+        params:
+            sidebar:
+                subtitle: 欢迎来到我的个人博客
+
+services:
+    googleAnalytics:
+        id:
+
+pagination:
+    pagerSize: 5
+
+permalinks:
+    post: /p/:slug/
+    page: /:slug/
+
 module:
     hugoVersion:
         extended: true
@@ -8,10 +40,10 @@ params:
         - post
     featuredImageField: image
     rssFullContent: true
-    favicon:
+    favicon: /favicon.png
 
     footer:
-        since:
+        since: 2025
         customText:
 
     dateFormat:
@@ -20,12 +52,12 @@ params:
 
     sidebar:
         compact: false
-        emoji:
-        subtitle:
+        emoji: 🍥
+        subtitle: 分享技术与生活
         avatar:
             enabled: true
             local: true
-            src: img/avatar.png
+            src: img/avatar.jpg
 
     article:
         headingAnchor: false
@@ -118,8 +150,19 @@ params:
             id:
 
     widgets:
-        homepage: []
-        page: []
+        homepage:
+            - type: search
+            - type: archives
+              params:
+                  limit: 5
+            - type: categories
+              params:
+                  limit: 10
+            - type: tag-cloud
+              params:
+                  limit: 10
+        page:
+            - type: toc
 
     opengraph:
         twitter:
@@ -147,3 +190,40 @@ params:
             enabled: true
         content:
             enabled: true
+
+### Custom menu
+menu:
+    main: []
+
+    social:
+        - identifier: github
+          name: GitHub
+          url: https://github.com
+          params:
+              icon: brand-github
+
+related:
+    includeNewer: true
+    threshold: 60
+    toLower: false
+    indices:
+        - name: tags
+          weight: 100
+        - name: categories
+          weight: 200
+
+markup:
+    goldmark:
+        renderer:
+            unsafe: true
+    tableOfContents:
+        endLevel: 4
+        ordered: true
+        startLevel: 2
+    highlight:
+        noClasses: false
+        codeFences: true
+        guessSyntax: true
+        lineNos: true
+        lineNumbersInTable: true
+        tabWidth: 4
